@@ -1,0 +1,70 @@
+/* Style sheet for the 2nd assignment */
+
+h1 {
+    font-family: Arial;
+    background-color: grey;
+    color: black;
+    text-align: center;
+  }
+h2, h3 {
+    font-family: Times New Roman;
+    color: red;
+
+}
+
+/* Teachers' table */
+table, th, td{
+    border-bottom: 1px solid #ddd;
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: left;
+}
+
+table {
+width: 50%;
+}
+
+p {
+    background: lightpink; 
+    }
+
+
+/* Callery of pictures */
+/* How to make pictures side by side? */
+
+.photos{
+    --g: 10px; /* the gap */
+
+    display: grid;
+    width: 750px; /* the size */
+    aspect-ratio: 1; /* equal height */
+    grid: auto-flow 1fr / repeat(2, 1fr);
+    gap: var(--g);
+  }
+  .gallery img:nth-child(2) {
+    grid-area: 1 / 2 / span 2 / span 2;
+  }
+  .gallery img:nth-child(3) {
+    grid-area: 2 / 1 / span 2 / span 2;
+  }
+
+
+/* How to refer to links? I need to change just them */
+
+A:visited {text-decoration: underline; color: red;} 
+A:hover {text-decoration: none; color: pink;}
+
+/* The second table */
+.temperatures table, .temperatures th, .temperatures td{
+
+        border-bottom: 1px solid #ddd;
+        border-collapse: collapse;
+        width: 50%;
+        padding: 5px;
+        text-align: left;
+    
+
+}
+
+.temperatures
+td:nth-child(even){background-color: #7587e3;}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Products Table</title>
+	<style>
+		table {
+			border-collapse: collapse;
+			text-align: left;
+		}
+
+		th, td {
+			border: 1px solid black;
+			padding: 8px;
+		}
+
+		button {
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+    <h3>Products</h3>
+	<table>
+		</thead>
+		<tbody>
+			<script>
+				// Define the products array
+				var products = ["milk", "coffee", "Juice", "Lemonade", "beer", "sour milk"];
+
+				// Loop through the array and add each item to the table
+				for (var i = 0; i < products.length; i++) {
+					document.write("<tr><td>" + products[i] + "</td></tr>");
+				}
+
+				// Define the sort function
+				function sortProducts() {
+					products.sort();
+					document.getElementsByTagName("tbody")[0].innerHTML = ""; // Clear the table
+					for (var i = 0; i < products.length; i++) {
+						document.getElementsByTagName("tbody")[0].innerHTML += "<tr><td>" + products[i] + "</td></tr>"; // Add the sorted items to the table
+					}
+				}
+			</script>
+		</tbody>
+	</table>
+
+	<button onclick="sortProducts()">Sort</button>
+
+</body>
+</html>

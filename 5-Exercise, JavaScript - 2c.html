@@ -1,0 +1,56 @@
+<!-- TASK: Create a html website which is asking a temperature. 
+    You have to show the text depending on the temperature  -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Temperature Text</title>
+    <style>
+      label, input, button {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input::-webkit-inner-spin-button,
+      input::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label for="temperature-input">Give the temperature</label>
+      <input type="number" id="temperature-input" name="temperature" required>
+    </div>
+    <div>
+      <button type="button" id="submit-button">Weather check</button>
+    </div>
+    <p id="temperature-text"></p>
+    <script>
+      const temperatureInput = document.getElementById("temperature-input");
+      const submitButton = document.getElementById("submit-button");
+      const temperatureText = document.getElementById("temperature-text");
+
+      submitButton.addEventListener("click", () => {
+        const temperature = Number(temperatureInput.value);
+
+        if (temperature >= -40 && temperature <= -20) {
+          temperatureText.textContent = "Pretty cold";
+        } else if (temperature >= -19 && temperature <= -5) {
+          temperatureText.textContent = "Average winter day";
+        } else if (temperature >= -5 && temperature <= 5) {
+          temperatureText.textContent = "Mild";
+        } else if (temperature >= 6 && temperature <= 15) {
+          temperatureText.textContent = "Not really warm yet";
+        } else if (temperature >= 16 && temperature <= 25) {
+          temperatureText.textContent = "Warm";
+        } else if (temperature >= 26 && temperature <= 40) {
+          temperatureText.textContent = "HOT";
+        } else {
+          temperatureText.textContent = "Temperature out of range";
+        }
+      });
+    </script>
+  </body>
+</html>

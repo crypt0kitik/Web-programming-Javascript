@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Products Table</title>
+	<style>
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Products</h1>
+	<table>
+		<thead>
+			</tr>
+		</thead>
+		<tbody>
+			<script>
+				var products = ["milk", "coffee", "juice", "lemonade", "beer", "sour milk"];
+
+				products.forEach(function(item) {
+				  document.write("<tr><td>" + item + "</td></tr>");
+				});
+			</script>
+		</tbody>
+	</table>
+</body>
+</html>

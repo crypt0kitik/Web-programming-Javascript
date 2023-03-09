@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Products Table</title>
+	<style>
+		table {
+			border-collapse: collapse;
+			text-align: left;
+		}
+
+		th, td {
+			border: 1px solid black;
+			padding: 8px;
+		}
+	</style>
+</head>
+<body>
+    <h3>Products</h3>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			<script>
+				// Define the products array
+				var products = [
+					{name: "milk", price: 1.10},
+					{name: "coffee", price: 3.50},
+					{name: "juice", price: 0.75},
+					{name: "lemonade", price: 0.90},
+					{name: "beer", price: 2.70},
+					{name: "sour milk", price: 0.80}
+				];
+
+				// Loop through the array and add each item to the table
+				for (var i = 0; i < products.length; i++) {
+					document.write("<tr><td>" + products[i].name + "</td><td>" + products[i].price + "</td></tr>");
+				}
+			</script>
+		</tbody>
+	</table>
+
+</body>
+</html>

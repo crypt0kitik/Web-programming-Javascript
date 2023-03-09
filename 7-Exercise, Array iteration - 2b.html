@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Products Table</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      text-align: center;
+    }
+    th, td {
+      padding: 8px;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Products Table</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody id="products-table-body"></tbody>
+  </table>
+
+  <script>
+    var products = [
+      {name: "milk", price: 1.10},
+      {name: "coffee" , price: 3.50},
+      {name: "juice" , price: 0.75},
+      {name: "lemonade" , price: 0.90},
+      {name: "beer" , price: 2.70},
+      {name: "sour milk" , price: 0.80}
+    ];
+
+    var filteredProducts = products.filter(function(product) {
+      return product.price < 2.00;
+    });
+
+    var tableBody = document.getElementById("products-table-body");
+
+    filteredProducts.forEach(function(product) {
+      var row = document.createElement("tr");
+      var nameCell = document.createElement("td");
+      var priceCell = document.createElement("td");
+
+      nameCell.innerText = product.name;
+      priceCell.innerText = product.price.toFixed(2);
+
+      row.appendChild(nameCell);
+      row.appendChild(priceCell);
+      tableBody.appendChild(row);
+    });
+  </script>
+
+</body>
+</html>

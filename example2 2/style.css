@@ -1,0 +1,21 @@
+*{
+    font-family: Georgia, serif;
+}
+    
+h1, h2, h3 {
+    color: red;
+
+}
+
+table, th, td{
+    border: 1px solid green;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 5px;
+}
+
+table{
+    margin: auto
+}

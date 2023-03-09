@@ -1,0 +1,78 @@
+<!-- TASK: Create a simple website and the event handlers, when user presses -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Change Name and Color Example</title>
+    <style>
+      /* Default style for the name display */
+      #name-display {
+        background-color: white;
+      }
+
+      /* Style for the name display with red background */
+      #name-display.red {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Click the buttons to change the name and color</h1>
+    <button id="change-name-btn">Change name!</button>
+    <button id="change-color-btn">Change color!</button>
+    <button id="back-to-original-name-btn">Back to original name</button>
+    <button id="back-to-original-color-btn">Back to original color</button>
+    <button id="back-to-original-btn">Back to original</button>
+    <p id="name-display">Mickey Mouse</p>
+
+    <script>
+      // Get the button and name display elements
+      const changeNameBtn = document.getElementById("change-name-btn");
+      const changeColorBtn = document.getElementById("change-color-btn");
+      const backToOriginalNameBtn = document.getElementById("back-to-original-name-btn");
+      const backToOriginalColorBtn = document.getElementById("back-to-original-color-btn");
+      const backToOriginalBtn = document.getElementById("back-to-original-btn");
+      const nameDisplay = document.getElementById("name-display");
+
+      // Store the original name and color
+      const originalName = nameDisplay.textContent;
+      const originalColor = nameDisplay.style.backgroundColor;
+
+      // Add a click event listener to the change name button
+      changeNameBtn.addEventListener("click", () => {
+        // Update the text content of the name display element
+        nameDisplay.textContent = "Donald Duck";
+      });
+
+      // Add a click event listener to the change color button
+      changeColorBtn.addEventListener("click", () => {
+        // Add the "red" class to the name display element
+        nameDisplay.classList.add("red");
+      });
+
+      // Add a click event listener to the back to original name button
+      backToOriginalNameBtn.addEventListener("click", () => {
+        // Restore the original text content of the name display element
+        nameDisplay.textContent = originalName;
+      });
+
+      // Add a click event listener to the back to original color button
+    backToOriginalColorBtn.addEventListener("click", () => {
+       // Restore the original background color of the name display element
+       nameDisplay.style.backgroundColor = originalColor;
+        // Remove the "red" class from the name display element
+        nameDisplay.classList.remove("red");
+      });
+
+
+      // Add a click event listener to the back to original button
+      backToOriginalBtn.addEventListener("click", () => {
+        // Restore the original text content and background color of the name display element
+        nameDisplay.textContent = originalName;
+        nameDisplay.style.backgroundColor = originalColor;
+        nameDisplay.classList.remove("red");
+      });
+    </script>
+  </body>
+</html>

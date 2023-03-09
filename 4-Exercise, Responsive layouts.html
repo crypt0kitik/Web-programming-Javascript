@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+  
+header {
+  background-color: #5acaf7;
+  color: #ffffff;
+  padding: 15px;
+  font-family: Arial;
+  color: black;
+  text-align: center;
+  }
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: #787979;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.menu li:hover {
+  background-color: #787979;
+}
+
+.aside {
+  background-color: #787979;
+  padding: 15px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+footer {
+  background-color: #898a8a;
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  padding: 15px;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+</style>
+
+        <title>
+            My Homepage
+        </title>
+
+    </head>
+<body>
+    <header>
+        <h1>My Company</h1>   
+    </header>
+
+    <div class="row">
+        <div class="col-3 col-s-3 menu">
+            <ul>
+                <li><a href="vision">Vision</a></li>
+                <li><a href="#about">About our company</a></li>
+                <li><a href="#staff">Our staff</a></li>
+                <li><a href="#services">Our services</a></li>
+            </ul>
+        </div>
+        <div class="col-9 col-s-9">
+            <div class="col-8 col-s-12">
+                <h1>Our vision</h1>
+                <p>
+                We believe that we are on the face of the earth to make great products and that's not changing. 
+                We are constantly focusing on innovating. We believe in the simple not the complex. 
+                We believe that we need to own and control the primary technologies behind the products that we make,
+                and participate only in markets where we can make a significant contribution. 
+                We believe in saying no to thousands of projects, 
+                so that we can really focus on the few that are truly important and meaningful to us. 
+                We believe in deep collaboration and cross-pollination of our groups, which allow us to innovate in a way that others cannot. 
+                And frankly, we don't settle for anything less than excellence in every group in the company, and we have the self-honesty to 
+                admit when we're wrong and the courage to change. 
+                And I think regardless of who is in what job those values are so embedded in this company that Apple will do extremely well."- 
+                Tim Cook, CEO of Apple Computer
+                </p>
+            </div>
+            <div class="col-4 col-s-12">
+                <img class="side_image" src="images/vision.jfif" alt="Our vision"/>  
+            </div>
+
+ 
+            <div class="col-8 col-s-12">   
+                <h1>About our company</h1>
+                <p>
+                Our story begins in 1971 along the cobblestone streets of Seattle’s historic Pike Place Market. 
+                It was here where Starbucks opened its first store, offering fresh-roasted coffee beans, 
+                tea and spices from around the world for our customers to take home. Our name was inspired by the classic tale, 
+                “Moby-Dick,” evoking the seafaring tradition of the early coffee traders.<br/>
+
+                Ten years later, a young New Yorker named Howard Schultz would walk through these doors and become 
+                captivated with Starbucks coffee from his first sip. After joining the company in 1982, a different 
+                cobblestone road would lead him to another discovery. 
+                It was on a trip to Milan in 1983 that Howard first experienced Italy’s coffeehouses, and he returned to Seattle inspired to 
+                bring the warmth and artistry of its coffee culture to Starbucks. By 1987, we swapped our brown aprons for green ones 
+                and embarked on our next chapter as a coffeehouse.<br/>
+                
+                Starbucks would soon expand to Chicago and Vancouver, Canada and then on to California, 
+                Washington, D.C. and New York. By 1996, we would cross the Pacific to open our first store in Japan, 
+                followed by Europe in 1998 and China in 1999. Over the next two decades, we would grow to welcome 
+                millions of customers each week and become a part of the fabric of tens of thousands of neighborhoods 
+                all around the world. In everything we do, we are always dedicated to Our Mission: to inspire and nurture 
+                the human spirit – one person, one cup, and one neighborhood at a time.
+                </p>
+            </div>
+            <div class="col-4 col-s-12">
+                <img class="side_image" src="images/about.png" alt="About us"/>
+            </div>
+
+            <div class="col-12 col-s-12"> 
+                <h1>Our staff</h1>
+                <div class="col-6 col-s-6">
+                    <h3>Mike</h3>
+                    <img src="images/staff_mike.jfif" width="200px" alt="Mike"/>
+                </div>
+
+                <div class="col-6 col-s-6">
+                    <h3>Maria</h3>
+                    <img src="images/staff_maria.jfif" width="200px" alt="Maria"/>
+                </div>
+            </div>
+            <div class="col-12 col-s-12"> 
+                <div class="col-6 col-s-6">
+                    <h3>Pasi</h3>
+                    <img src="images/staff_pasi.jfif" width="200px" alt="Pasi"/>
+                </div>
+                
+                <div class="col-6 col-s-6">
+                    <h3>Wilson</h3>
+                    <img src="images/staff_wilson.jfif" width="200px" alt="Wilson"/>
+                </div>              
+            </div>
+        </div>
+    </div>
+    <footer>
+        <h2>Some useful links</h2>
+        <ul>
+            <li><a href="https://www.lapinamk.fi/">Lapin amk</a> </li>
+            <li><a href="https://www.rovaniemi.fi/">Rovaniemi city</a></li>
+            <li><a href="">Starbucks coffee</a></li>
+            <li><a href="">Apple</a> </li>
+            <li><a href="https://www.google.com/"></a>Google</li>
+            <li><a href="https://www.foreca.fi/">Weather</a> </li>
+            <li><a href="https://www.visitrovaniemi.fi/">Visit Rovaniemi</a></li>
+        </ul>
+    </footer>
+
+</body>
+</html>
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Products Table</title>
+	<style>
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Products</h1>
+	<table>
+		<thead>
+		</thead>
+		<tbody>
+			<script>
+				var products = ["milk", "coffee", "juice", "lemonade", "beer", "sour milk"];
+
+				var newProducts = products.map(function(item, index) {
+				  return index + 1 + ". " + item;
+				});
+
+				newProducts.forEach(function(item) {
+				  var row = "<tr><td>" + item + "</td></tr>";
+				  document.write(row);
+				});
+			</script>
+		</tbody>
+	</table>
+</body>
+</html>

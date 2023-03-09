@@ -1,0 +1,29 @@
+<!-- TASK: Create the following website which 
+counts the difference of two dates in days  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Date Difference Calculator</title>
+</head>
+<body>
+  <h1>Date Difference Calculator</h1>
+  <p>Enter two dates to calculate the difference in days:</p>
+  <label for="date1">First Date:</label>
+  <input type="date" id="date1"><br><br>
+  <label for="date2">Second Date:</label>
+  <input type="date" id="date2"><br><br>
+  <button onclick="calculateDifference()">Calculate Difference</button>
+  <p id="result"></p>
+
+  <script>
+    function calculateDifference() {
+      const date1 = new Date(document.getElementById("date1").value);
+      const date2 = new Date(document.getElementById("date2").value);
+      const oneDay = 24 * 60 * 60 * 1000; // hours * minutes * seconds * milliseconds
+      const diffInDays = Math.round(Math.abs((date1 - date2) / oneDay));
+      document.getElementById("result").textContent = `The difference between the dates is ${diffInDays} days.`;
+    }
+  </script>
+</body>
+</html>

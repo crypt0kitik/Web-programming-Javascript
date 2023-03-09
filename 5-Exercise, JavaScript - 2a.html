@@ -1,0 +1,54 @@
+<!-- TASK: Events and variables + Date object
+Create the following app where user can input two integers 
+and after pressing the button it counts the sum of these 
+numbers below the button -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>JavaScript Variables, Event Handling, and Functions</title>
+    <style>
+      input::-webkit-inner-spin-button,
+      input::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JavaScript Variables, Event Handling, and Functions</h1>
+    <p>Give the following values and count the sum.</p>
+
+    <label for="x-input">x:</label>
+    <input type="number" id="x-input"><br>
+
+    <label for="y-input">y:</label>
+    <input type="number" id="y-input"><br>
+
+    <button id="calculate-sum-btn">x + y</button>
+
+    <p id="product-display">The value of x+y is:</p>
+
+    <script>
+      // Get the input fields and button elements
+      const xInput = document.getElementById("x-input");
+      const yInput = document.getElementById("y-input");
+      const calculateSumBtn = document.getElementById("calculate-sum-btn");
+      const productDisplay = document.getElementById("product-display");
+
+      // Add a click event listener to the calculate sum button
+      calculateSumBtn.addEventListener("click", () => {
+        // Get the values of the input fields and convert them to numbers
+        const x = Number(xInput.value);
+        const y = Number(yInput.value);
+
+        // Calculate the sum of the two numbers
+        const sum = x + y;
+
+        // Update the product display element with the sum value
+        productDisplay.textContent = `The value of x+y is: ${sum}`;
+      });
+    </script>
+  </body>
+</html>

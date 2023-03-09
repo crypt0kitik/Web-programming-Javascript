@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Filtered Products</title>
+</head>
+<body>
+
+  <h1>Products</h1>
+
+  <p>Original products:</p>
+  <ul id="original-products"></ul>
+
+  <p>Filtered products starting with 'm' or 'j':</p>
+  <ul id="filtered-products"></ul>
+
+  <script>
+    var products = ["milk", "coffee", "juice", "lemonade", "beer", "sour milk"];
+
+    var filteredProducts = products.filter(function(product) {
+      return product.startsWith("m") || product.startsWith("j");
+    });
+
+    var originalList = document.getElementById("original-products");
+    products.forEach(function(product) {
+      var listItem = document.createElement("li");
+      listItem.innerText = product;
+      originalList.appendChild(listItem);
+    });
+
+    var filteredList = document.getElementById("filtered-products");
+    filteredProducts.forEach(function(product) {
+      var listItem = document.createElement("li");
+      listItem.innerText = product;
+      filteredList.appendChild(listItem);
+    });
+  </script>
+
+</body>
+</html>

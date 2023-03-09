@@ -1,0 +1,81 @@
+<!DOCTYPE html> 
+
+<html>
+    <head>
+        <link rel="stylesheet" href="style_sheet_forms.css">
+
+        <title>Example of the form</title>
+    </head>
+
+<body>
+
+<form action="/action_page.php" method="post">
+
+<h1>Registration form</h1>
+
+<!-- The 1st part of the form -->
+
+<h2><u>Personal information</u></h2>
+
+<!-- How to make align columns? -->
+<div class="row">
+    <label for="firstname"><span>First name:</span></label>
+    <input type="text" id="fname" name="fname"
+</div>
+
+<div class="row">
+    <label for="lname"><span>Last name:</span></label>
+    <input type="text" id="lname" name="lname"
+</div>
+
+<div class="row">
+    <label for="lname"><span>E-mail:</span></label>
+    <input type="text" id="lname" name="lname"
+</div>
+
+<!-- section Sex choice -->
+<fieldset>
+    <legend align="left"> Sex</legend>
+
+<input type="checkbox" id="sex1" name="sex1" value="Women">
+<label for="sex1">Women</label><br>
+<input type="checkbox" id="sex2" name="sex2" value="Man">
+<label for="sex2"> Man</label><br>
+</fieldset>
+
+<!-- section Date of Birthday -->
+<!-- How to make mm/dd/yyyy and icon calendar? -->
+<label for="birthday">Date of Birth:</label>
+<input type="date" id="birthday" name="birthday">
+
+<!-- The 2nd part of the form -->
+<h2><u>Study infromation</u></h2>
+
+<!-- Choose programme -->
+<label for="Programme">Programme</label>
+    <select id="Programme" name="Programme">
+      <option value="machinelearning">Machine Learning</option>
+      <option value="nursing">Nursing</option>
+    </select>
+
+<!-- Section "Course selections" -->    
+<h4>Course selections spring 2022</h4>
+
+<input type="checkbox" id="course1" name="course1" value="Industrial_Project">
+<label for="course1"> Industrial Project</label><br>
+<input type="checkbox" id="course2" name="course2" value="Web_Programming">
+<label for="vehicle2"> Web Programming</label><br>
+<input type="checkbox" id="course3" name="course3" value="IOT">
+<label for="course3"> IOT</label><br>
+
+<!-- Section "Other" -->
+<h2><u>Other</u></h2>
+
+<textarea rows="10" cols="25"></textarea>
+
+<!-- Submit the form -->
+<br> <input type="submit" value="Send">
+
+</form> 
+</body> 
+</html>

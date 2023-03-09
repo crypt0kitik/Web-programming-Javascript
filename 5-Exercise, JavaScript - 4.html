@@ -1,0 +1,70 @@
+<!-- TASK: Implement web application for counting the post costs  -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculate Post Cost</title>
+  </head>
+  <body>
+    <h1>Calculate Post Cost</h1>
+    
+    <label for="post-type">Post Type:</label>
+    <select id="post-type">
+      <option value="Letter">Letter</option>
+      <option value="Package">Package</option>
+    </select>
+    
+    <br><br>
+    
+    <label for="post-weight">Post Weight (in grams):</label>
+    <input type="number" id="post-weight">
+    
+    <br><br>
+    
+    <button onclick="calculatePostCost()">Calculate Cost</button>
+    
+    <br><br>
+    
+    <div id="result"></div>
+    
+    <script>
+      function calculatePostCost() {
+        const type = document.getElementById('post-type').value;
+        const weight = document.getElementById('post-weight').value;
+        
+        let basePrice;
+        let extraCostPer100g;
+
+        // Set base price and extra cost per 100g based on type
+        if (type === 'Letter') {
+          basePrice = 0.5;
+          if (weight < 200) {
+            extraCostPer100g = 0;
+          } else if (weight >= 200 && weight <= 500) {
+            extraCostPer100g = 0.04;
+          } else {
+            extraCostPer100g = 0.07;
+          }
+        } else if (type === 'Package') {
+          basePrice = 2;
+          if (weight < 200) {
+            extraCostPer100g = 0;
+          } else if (weight >= 200 && weight <= 500) {
+            extraCostPer100g = 0.08;
+          } else {
+            extraCostPer100g = 0.14;
+          }
+        } else {
+          document.getElementById('result').innerHTML = 'Invalid post type';
+          return;
+        }
+
+        // Calculate total cost
+        const extraCost = extraCostPer100g * Math.ceil(weight / 100);
+        const totalCost = basePrice + extraCost;
+
+        document.getElementById('result').innerHTML = `Total cost: €${totalCost.toFixed(2)}`;
+      }
+    </script>
+  </body>
+</html>
