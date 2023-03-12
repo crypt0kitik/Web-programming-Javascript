@@ -12,7 +12,8 @@
 			border: 1px solid black;
 			padding: 8px;
 		}
-        button {
+
+		button {
 			margin-top: 10px;
 		}
 	</style>
@@ -38,6 +39,12 @@
 					{name: "sour milk", price: 0.80}
 				];
 
+
+				// Loop through the array and add each item to the table
+				for (var i = 0; i < products.length; i++) {
+					document.write("<tr><td>" + products[i].name + "</td><td>" + products[i].price + "</td></tr>");
+				}
+				
 				// Sort the products array in ascending order by price
 				function sortProductsByPrice() {
 					products.sort(function(a, b) {
@@ -56,14 +63,13 @@
 				// Call the sortProductsByPrice function when the button is clicked
 				var sortButton = document.createElement("button");
 				sortButton.textContent = "Sort";
-				sortButton.addEventListener("click", sortProductsByPrice);
+				sortButton.addEventListener("click", function() {
+                    // Display the initial products table
+					sortProductsByPrice();
+                });
 				document.body.appendChild(sortButton);
-				
-				// Display the initial products table
-				sortProductsByPrice();
 			</script>
 		</tbody>
 	</table>
-
 </body>
 </html>

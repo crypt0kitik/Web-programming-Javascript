@@ -127,6 +127,18 @@ const firstNameCell = document.createElement("td");
   }
 
   // Call updateTable when a radio button or select option is changed
+
+  const alphaRadio = document.getElementById("alphabetical");
+const ageRadio = document.getElementById("age");
+
+alphaRadio.addEventListener("change", () => {
+  updateTable(document.querySelector('input[name="gender"]:checked').value, studyFieldSelect.value, "alphabetical");
+});
+
+ageRadio.addEventListener("change", () => {
+  updateTable(document.querySelector('input[name="gender"]:checked').value, studyFieldSelect.value, "age");
+});
+
   allRadio.addEventListener("change", () => {
     updateTable("all", studyFieldSelect.value, document.querySelector('input[name="sort"]:checked').value);
   });
