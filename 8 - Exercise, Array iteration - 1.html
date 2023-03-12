@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Information</title>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 10px;
+            }
+        </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Surname</th>
+          <th>Gender</th>
+          <th>Field of Study</th>
+          <th>Address</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody id="student-table-body"></tbody>
+    </table>
+
+    <script src="students_json.js"></script>
+    <script>
+      // Get a reference to the table body
+      const tableBody = document.getElementById("student-table-body");
+
+      // Loop through each student and add a row to the table
+      for (const student of students) {
+        const row = document.createElement("tr");
+
+        const studentIdCell = document.createElement("td");
+        studentIdCell.textContent = student.student_id;
+        row.appendChild(studentIdCell);
+
+        const firstNameCell = document.createElement("td");
+        firstNameCell.textContent = student.firstname;
+        row.appendChild(firstNameCell);
+
+        const surnameCell = document.createElement("td");
+        surnameCell.textContent = student.lastname;
+        row.appendChild(surnameCell);
+
+        const genderCell = document.createElement("td");
+        genderCell.textContent = student.gender;
+        row.appendChild(genderCell);
+
+        const fieldOfStudyCell = document.createElement("td");
+        fieldOfStudyCell.textContent = student.study_field;
+        row.appendChild(fieldOfStudyCell);
+
+        const addressCell = document.createElement("td");
+        addressCell.textContent = student.address;
+        row.appendChild(addressCell);
+
+        const emailCell = document.createElement("td");
+        emailCell.textContent = student.email;
+        row.appendChild(emailCell);
+
+        const phoneCell = document.createElement("td");
+        phoneCell.textContent = student.phone;
+        row.appendChild(phoneCell);
+
+
+        const ageCell = document.createElement("td");
+        ageCell.textContent = student.age;
+        row.appendChild(ageCell);
+
+        tableBody.appendChild(row);
+      }
+    </script>
+  </body>
+</html>
+

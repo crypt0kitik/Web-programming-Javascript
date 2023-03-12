@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Information</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="radio" id="all-radio" name="gender" value="all" checked>
+      <label for="all-radio">All</label>
+      
+      <input type="radio" id="men-radio" name="gender" value="male">
+<label for="men-radio">Men</label>
+
+<input type="radio" id="women-radio" name="gender" value="female">
+<label for="women-radio">Women</label>
+</div>
+
+<div>
+  <label>Filter by Field of Study:</label>
+  <select id="study-field">
+    <option value="all" selected>All</option>
+    <option value="Computer Science">Computer Science</option>
+    <option value="Business">Business</option>
+    <option value="Art">Art</option>
+  </select>
+</div>
+
+
+<table>
+<thead>
+  <tr>
+    <th>Student ID</th>
+    <th>First Name</th>
+    <th>Surname</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Field of Study</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Address</th>
+  </tr>
+</thead>
+<tbody id="student-table-body"></tbody>
+</table>
+
+<script src="students_json.js"></script>
+<script>
+
+// Get a reference to the table body and the radio buttons
+const tableBody = document.getElementById("student-table-body");
+const allRadio = document.getElementById("all-radio");
+const menRadio = document.getElementById("men-radio");
+const womenRadio = document.getElementById("women-radio");
+const studyFieldSelect = document.getElementById("study-field");
+  
+  function updateTable(gender, studyField) {
+  // Clear the table body
+  tableBody.innerHTML = "";
+
+  // Loop through each student and add a row to the table if the gender and study field matches
+  for (const student of students) {
+    if (
+      (gender === "all" || student.gender === gender) &&
+      (studyField === "all" || student.study_field === studyField)
+    ) {
+      const row = document.createElement("tr");
+
+
+const studentIdCell = document.createElement("td");
+studentIdCell.textContent = student.student_id;
+row.appendChild(studentIdCell);
+
+const firstNameCell = document.createElement("td");
+firstNameCell.textContent = student.firstname;
+row.appendChild(firstNameCell);
+
+const surnameCell = document.createElement("td");
+surnameCell.textContent = student.lastname;
+row.appendChild(surnameCell);
+
+const ageCell = document.createElement("td");
+ageCell.textContent = student.age;
+row.appendChild(ageCell);
+
+const genderCell = document.createElement("td");
+genderCell.textContent = student.gender;
+row.appendChild(genderCell);
+
+const studyFieldCell = document.createElement("td");
+studyFieldCell.textContent = student.study_field;
+row.appendChild(studyFieldCell);
+
+const emailCell = document.createElement("td");
+emailCell.textContent = student.email;
+row.appendChild(emailCell);
+
+const phoneCell = document.createElement("td");
+phoneCell.textContent = student.phone;
+row.appendChild(phoneCell);
+
+const addressCell = document.createElement("td");
+addressCell.textContent = student.address;
+row.appendChild(addressCell);
+
+tableBody.appendChild(row);
+}
+}
+}
+
+// Add an event listener to the radio buttons and select element to update the table when they are changed
+allRadio.addEventListener("change", () => updateTable("all", studyFieldSelect.value));
+menRadio.addEventListener("change", () => updateTable("male", studyFieldSelect.value));
+womenRadio.addEventListener("change", () => updateTable("female", studyFieldSelect.value));
+studyFieldSelect.addEventListener("change", () => updateTable(allRadio.checked ? "all" : (menRadio.checked ? "male" : "female"), studyFieldSelect.value));
+
+// Initially display all students in the table
+updateTable("all", "all");
+</script>
+</body>
+</html>
