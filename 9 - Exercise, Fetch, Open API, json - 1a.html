@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Weather Information</title>
+  </head>
+  <body>
+    <h3>Weather Information</h3>
+    
+    <label for="city">Select a city:</label>
+    <select id="city">
+      <option value="Helsinki">Helsinki</option>
+      <option value="Paris">Paris</option>
+      <option value="London">London</option>
+      <option value="Madrid">Madrid</option>
+      <option value="Stockholm">Stockholm</option>
+      <option value="Rovaniemi">Rovaniemi</option>
+      <option value="Kuopio">Kuopio</option>
+    </select>
+    
+    <button onclick="getWeather()">SHOW</button>
+    
+    <div id="weather"></div>
+    
+    <script>
+      function getWeather() {
+        // Get the selected city from the select element
+        const city = document.getElementById("city").value;
+        
+        // Build the API URL with the selected city and the APPID
+        // for some reasons my APPID does not work correcrlty 
+        // 424f89646cac7a01182e65c386f058b8
+        // that's why I used APPID from the task (I hope, it is fine)
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=0e886f7ad4a841c34979c45acf1bfaf2&lang=Fi`;
+        
+        // Make a GET request to the API
+        fetch(url)
+          .then(response => response.json())
+          .then(data => {
+            // Get the weather data from the response
+            const temperature = data.main.temp;
+            const humidity = data.main.humidity;
+            const windSpeed = data.wind.speed;
+            const clouds = data.weather[0].description;
+            
+            // Display the weather data on the page
+            const weatherDiv = document.getElementById("weather");
+            weatherDiv.innerHTML = `
+              <p>Temperature: ${temperature} &#8451;</p>
+              <p>Humidity: ${humidity} %</p>
+              <p>Wind speed: ${windSpeed} m/s</p>
+              <p>Clouds: ${clouds}</p>
+            `;
+          })
+          .catch(error => {
+            // Display an error message if the API request fails
+            const weatherDiv = document.getElementById("weather");
+            weatherDiv.innerHTML = "<p>Error to show weather data</p>";
+            console.error(error);
+          });
+      }
+    </script>
+  </body>
+</html>

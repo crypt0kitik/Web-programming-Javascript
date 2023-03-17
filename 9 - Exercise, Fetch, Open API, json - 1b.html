@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Weather Information</title>
+  </head>
+  <body>
+    <h1>Weather Information</h1>
+    
+    <label for="city">Select a city:</label>
+    <select id="city">
+      <option value="Helsinki">Helsinki</option>
+      <option value="Paris">Paris</option>
+      <option value="London">London</option>
+      <option value="Madrid">Madrid</option>
+      <option value="Stockholm">Stockholm</option>
+      <option value="Rovaniemi">Rovaniemi</option>
+      <option value="Kuopio">Kuopio</option>
+    </select>
+    
+    <button onclick="getWeather()">SHOW</button>
+
+    <div id="weather">
+      <p>
+        <label>
+          <input type="checkbox" name="temperature" onchange="toggleTemperature(event)"> Temperature
+        </label>
+      </p>
+      <div id="temperature" style="display: none;"></div>
+      
+      <p>
+        <label>
+          <input type="checkbox" name="humidity" onchange="toggleHumidity(event)"> Humidity
+        </label>
+      </p>
+      <div id="humidity" style="display: none;"></div>
+      
+      <p>
+        <label>
+          <input type="checkbox" name="wind" onchange="toggleWind(event)"> Wind speed
+        </label>
+      </p>
+      <div id="wind" style="display: none;"></div>
+      
+      <p>
+        <label>
+          <input type="checkbox" name="clouds" onchange="toggleClouds(event)"> Clouds
+        </label>
+      </p>
+      <div id="clouds" style="display: none;"></div>
+    </div>
+    
+    <script>
+      // Temperature toggle function
+      function toggleTemperature() {
+        const temperatureDiv = document.getElementById("temperature");
+        temperatureDiv.style.display = temperatureDiv.style.display === "none" ? "block" : "none";
+      }
+
+      // Humidity toggle function
+      function toggleHumidity() {
+        const humidityDiv = document.getElementById("humidity");
+        humidityDiv.style.display = humidityDiv.style.display === "none" ? "block" : "none";
+      }
+
+      // Wind toggle function
+      function toggleWind() {
+        const windDiv = document.getElementById("wind");
+        windDiv.style.display = windDiv.style.display === "none" ? "block" : "none";
+      }
+
+      // Clouds toggle function
+      function toggleClouds() {
+        const cloudsDiv = document.getElementById("clouds");
+        cloudsDiv.style.display = cloudsDiv.style.display === "none" ? "block" : "none";
+      }
+
+      function getWeather() {
+        // Get the selected city from the select element
+        const city = document.getElementById("city").value;
+        
+        // Build the API URL with the selected city and your own APPID
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=0e886f7ad4a841c34979c45acf1bfaf2&lang=Fi`;
+
+        // Make a GET request to the API
+        fetch(url)
+          .then(response => response.json())
+          .then(data => {
+            // Get the weather data from the response
+            const temperature = data.main.temp;
+            const humidity = data.main.humidity;
+            const windSpeed = data.wind.speed;
+            const clouds = data.weather[0].description;
+        
+      // Display the weather data on the page
+      const temperatureDiv = document.getElementById("temperature");
+      temperatureDiv.textContent = `Temperature: ${temperature} °C`;
+
+      const humidityDiv = document.getElementById("humidity");
+      humidityDiv.textContent = `Humidity: ${humidity} %`;
+
+      const windDiv = document.getElementById("wind");
+      windDiv.textContent = `Wind speed: ${windSpeed} m/s`;
+
+      const cloudsDiv = document.getElementById("clouds");
+      cloudsDiv.textContent = `Clouds: ${clouds}`;
+    })
+
+// Temperature toggle function
+function toggleTemperature() {
+  const temperatureDiv = document.getElementById("temperature");
+  temperatureDiv.style.display = temperatureDiv.style.display === "none" ? "block" : "none";
+  temperatureDiv.textContent = `Temperature: ${temperature} °C`;
+}
+
+// Humidity toggle function
+function toggleHumidity() {
+  const humidityDiv = document.getElementById("humidity");
+  humidityDiv.style.display = humidityDiv.style.display === "none" ? "block" : "none";
+  humidityDiv.textContent = `Humidity: ${humidity} %`;
+}
+
+// Wind toggle function
+function toggleWind() {
+  const windDiv = document.getElementById("wind");
+  windDiv.style.display = windDiv.style.display === "none" ? "block" : "none";
+  windDiv.textContent = `Wind speed: ${windSpeed} m/s`;
+}
+
+// Clouds toggle function
+function toggleClouds() {
+  const cloudsDiv = document.getElementById("clouds");
+  cloudsDiv.style.display = cloudsDiv.style.display === "none" ? "block" : "none";
+  cloudsDiv.textContent = `Clouds: ${clouds}`;
+}
+
+}
+    </script>
+  </body>
+</html>
