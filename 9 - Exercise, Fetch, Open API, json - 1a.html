@@ -28,10 +28,7 @@
         const city = document.getElementById("city").value;
         
         // Build the API URL with the selected city and the APPID
-        // for some reasons my APPID does not work correcrlty 
-        // 424f89646cac7a01182e65c386f058b8
-        // that's why I used APPID from the task (I hope, it is fine)
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=0e886f7ad4a841c34979c45acf1bfaf2&lang=Fi`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=MYAPPID`;
         
         // Make a GET request to the API
         fetch(url)
